@@ -52,7 +52,7 @@ public class Ave extends Animal {
 
     public static Ave crearAguila(String nomb, int eda,String gen){
         Ave halcon = new Ave(nomb, eda, "montañas", gen, "blanco y amarillo");
-        halcones++;
+        aguilas++;
         listado.add(halcon);
         return halcon;
     }
