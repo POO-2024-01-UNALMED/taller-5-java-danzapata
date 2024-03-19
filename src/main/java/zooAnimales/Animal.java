@@ -78,8 +78,7 @@ public class Animal {
                "Aves: "+Ave.cantidadAves()+"\n"+
                "Reptiles: "+Reptil.cantidadReptiles()+"\n"+
                "Peces: "+Pez.cantidadPeces()+"\n"+
-               "Anfibios: "+Anfibio.cantidadAnfibios()+"\n"          
-               ;
+               "Anfibios: "+Anfibio.cantidadAnfibios();
     }
 
     public String toString(){
