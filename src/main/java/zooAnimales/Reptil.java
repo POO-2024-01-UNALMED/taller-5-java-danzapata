@@ -1,19 +1,18 @@
 package zooAnimales;
 import java.util.ArrayList;
 
-import gestion.Zona;
 
 public class Reptil extends Animal {
     //Atributos
     private static ArrayList<Reptil> listado = new ArrayList<> ();
-    public int iguanas;  
-    public int serpientes;
+    public static int iguanas;  
+    public static int serpientes;
     private String colorEscamas;
     private int largoCola;
 
     //constructores
-    public Reptil(String nombre, int edad, String habitat,String genero, Zona zona, String colorEscamas,int largoCola){
-        super(nombre, edad, habitat, genero, zona);
+    public Reptil(String nombre, int edad, String habitat,String genero, String colorEscamas,int largoCola){
+        super(nombre, edad, habitat, genero);
         this.colorEscamas = colorEscamas;
         this.largoCola = largoCola;
         listado.add(this);
@@ -50,15 +49,19 @@ public class Reptil extends Animal {
         return "reptar";
     }
     
-    public Reptil crearIguana(String nomb, int eda,String gen, Zona zon){
-        Reptil iguana = new Reptil(nomb, eda, "humedal", gen, zon, "verde", 3);
+    public static int cantidadReptiles(){
+        return listado.size();
+    }
+    
+    public static Reptil crearIguana(String nomb, int eda,String gen){
+        Reptil iguana = new Reptil(nomb, eda, "humedal", gen,  "verde", 3);
         iguanas++;
         listado.add(iguana);
         return iguana;
     }
     
-    public Reptil crearSerpiente(String nomb, int eda,String gen, Zona zon){
-        Reptil serpiente = new Reptil(nomb, eda, "jungla", gen, zon, "blanco", 1);
+    public static Reptil crearSerpiente(String nomb, int eda,String gen){
+        Reptil serpiente = new Reptil(nomb, eda, "jungla", gen, "blanco", 1);
         serpientes++;
         listado.add(serpiente);
         return serpiente;

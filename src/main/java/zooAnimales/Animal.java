@@ -11,12 +11,11 @@ public class Animal {
     private Zona zona;
 
     //constructor
-    public Animal(String nombre, int edad, String habitat,String genero, Zona zona){ 
+    public Animal(String nombre, int edad, String habitat,String genero){ 
         this.nombre = nombre;
         this.edad = edad;
         this.habitat = habitat;
         this.genero = genero;
-        this.zona = zona;
         totalAnimales++;
     }
 
@@ -74,12 +73,13 @@ public class Animal {
     }
 
     //métodos
-    public static void totalPorTipo(){
-        System.out.print("Mamiferos:"+Mamifero.getListado());
-        System.out.print("Aves:"+Ave.getListado());
-        System.out.print("Reptiles:"+Reptil.getListado());
-        System.out.print("Peces:"+Pez.getListado());
-        System.out.print("Anfibios:"+Anfibio.getListado());
+    public static String totalPorTipo(){
+        return "Mamiferos: "+Mamifero.cantidadMamiferos()+"\n"+
+               "Aves: "+Ave.cantidadAves()+"\n"+
+               "Reptiles: "+Reptil.cantidadReptiles()+"\n"+
+               "Peces: "+Pez.cantidadPeces()+"\n"+
+               "Anfibios: "+Anfibio.cantidadAnfibios()+"\n"          
+               ;
     }
 
     public String toString(){

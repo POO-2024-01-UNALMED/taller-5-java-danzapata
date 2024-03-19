@@ -1,18 +1,17 @@
 package zooAnimales;
 import java.util.ArrayList;
 
-import gestion.Zona;
 
 public class Ave extends Animal {
     //atributos
     private static ArrayList<Ave> listado = new ArrayList<> ();
-    public int halcones;  
-    public int aguilas;
+    public static int halcones;  
+    public static int aguilas;
     private String colorPlumas;
 
     //constructores
-    public Ave(String nombre, int edad, String habitat,String genero, Zona zona, String colorPlumas){
-        super(nombre, edad, habitat, genero, zona);
+    public Ave(String nombre, int edad, String habitat,String genero, String colorPlumas){
+        super(nombre, edad, habitat, genero);
         this.colorPlumas = colorPlumas;
         listado.add(this);
     }
@@ -44,15 +43,15 @@ public class Ave extends Animal {
         return listado.size();
     }
 
-    public Ave crearHalcon(String nomb, int eda,String gen, Zona zon){
-        Ave halcon = new Ave(nomb, eda, "montañas", gen, zon, "cafe glorioso");
+    public static Ave crearHalcon(String nomb, int eda,String gen){
+        Ave halcon = new Ave(nomb, eda, "montañas", gen, "cafe glorioso");
         halcones++;
         listado.add(halcon);
         return halcon;
     }
 
-    public Ave crearAguila(String nomb, int eda,String gen, Zona zon){
-        Ave halcon = new Ave(nomb, eda, "montañas", gen, zon, "blanco y amarillo");
+    public static Ave crearAguila(String nomb, int eda,String gen){
+        Ave halcon = new Ave(nomb, eda, "montañas", gen, "blanco y amarillo");
         halcones++;
         listado.add(halcon);
         return halcon;
